@@ -6,34 +6,42 @@ To implement filters for smoothing and sharpening the images in the spatial doma
 Anaconda - Python 3.7
 
 ## Algorithm:
-### Step1
+### Step1:
+Import cv2, matplotlib.py libraries and read the saved images using cv2.imread().
 </br>
 </br> 
 
-### Step2
+### Step2:
+Convert the saved BGR image to RGB using cvtColor().
 </br>
 </br> 
 
-### Step3
+### Step3:
+By using the following filters for image smoothing:filter2D(src, ddepth, kernel), Box filter,Weighted Average filter,GaussianBlur(src, ksize, sigmaX[, dst[, sigmaY[, borderType]]]), medianBlur(src, ksize),and for image sharpening:Laplacian Kernel,Laplacian Operator.
 </br>
 </br> 
 
-### Step4
+### Step4:
+Apply the filters using cv2.filter2D() for each respective filters.
 </br>
 </br> 
 
-### Step5
+### Step5:
+Apply the filters using cv2.filter2D() for each respective filters.
 </br>
 </br> 
 
 ## Program:
+```
 ### Developed By   : Vineesh.M
 ### Register Number: 212221230122
+
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 image = cv2.imread("luffty.jpg")
 original_image = cv2.cvtColor(image,cv2.COLOR_BGR2RGB)
+```
 ### 1. Smoothing Filters
 
 i) Using Averaging Filter
@@ -77,6 +85,7 @@ plt.subplot(1,2,2)
 plt.imshow(gaussian_blur)
 plt.title("Filtered")
 plt.axis("off")
+```
 iv) Using Median Filter
 ```Python
 median = cv2.medianBlur(src=original_image,ksize = 11)
